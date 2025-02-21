@@ -19,10 +19,10 @@
                         <img src="images/profile.png" alt="Profile image">
                     </div>
                     <div class="profile__name">
-                        <%=user.name%>
+                        <%= user.name %>
                     </div>
                     <div class="profile__surname">
-                        heart
+                        <%= user.profession %>
                     </div>
                     <div class="profile__social-icon">
                         <a href="">
@@ -46,11 +46,15 @@
                 <div class="about">
                     <div class="about__age">
                         <div class="about__age-left">Age:</div>
-                        <div class="about__age-right">30</div>
+                        <div class="about__age-right">
+                            <%= user.age %>
+                        </div>
                     </div>
                     <div class="about__residence">
                         <div class="about__residence-left">Residence:</div>
-                        <div class="about__residence-right">BD</div>
+                        <div class="about__residence-right">
+                            <%= user.residence %>
+                        </div>
                     </div>
                     <div class="about__frilance">
                         <div class="about__frilance-left">Freelance:</div>
@@ -58,125 +62,61 @@
                     </div>
                     <div class="about__address">
                         <div class="about__address-left">Address:</div>
-                        <div class="about__address-right">Korea</div>
+                        <div class="about__address-right">
+                            <%= user.address %>
+                        </div>
                     </div>
                 </div>
                 <div class="line"></div>
                 <div class="language">
                     <div class="language__title">Languages</div>
-                    <div class="language__first">
-                        <div class="language__first-left">Uzbek</div>
-                        <div class="language__first-right">100%</div>
-                    </div>
-                    <div class="language__line">
-                        <div class="language__line-outside">
-                            <div class="language__line-inside-100"></div>
+                    <% user.languages.forEach(function(item) { %>
+                        <div class="language__first">
+                            <div class="language__first-left">
+                                <%= item %>
+                            </div>
+                            <div class="language__first-right">100%</div>
                         </div>
-                    </div>
-                    <div class="language__first">
-                        <div class="language__first-left">English</div>
-                        <div class="language__first-right">90%</div>
-                    </div>
-                    <div class="language__line">
-                        <div class="language__line-outside">
-                            <div class="language__line-inside-90"></div>
+                        <div class="language__line">
+                            <div class="language__line-outside">
+                                <div class="language__line-inside-100"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="language__first">
-                        <div class="language__first-left">Korean</div>
-                        <div class="language__first-right">80%</div>
-                    </div>
-                    <div class="language__line">
-                        <div class="language__line-outside">
-                            <div class="language__line-inside-80"></div>
-                        </div>
-                    </div>
+                        <% }); %>
                 </div>
                 <div class="line"></div>
                 <div class="skills">
                     <div class="skills__title">Skills</div>
-                    <div class="skills__content">
-                        <div class="skills__content-name">JavaScript</div>
-                        <div class="skills__content-percent">100%</div>
-                    </div>
-                    <div class="skills__line">
-                        <div class="skills__line-outside">
-                            <div class="skills__line-inside-100"></div>
+                    <% user.skills.forEach(function(item) { %>
+                        <div class="skills__content">
+                            <div class="skills__content-name">
+                                <%= item %>
+                            </div>
+                            <div class="skills__content-percent">100%</div>
                         </div>
-                    </div>
-                    <div class="skills__content">
-                        <div class="skills__content-name">Php</div>
-                        <div class="skills__content-percent">80%</div>
-                    </div>
-                    <div class="skills__line">
-                        <div class="skills__line-outside">
-                            <div class="skills__line-inside-80"></div>
+                        <div class="skills__line">
+                            <div class="skills__line-outside">
+                                <div class="skills__line-inside-100"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skills__content">
-                        <div class="skills__content-name">React</div>
-                        <div class="skills__content-percent">90%</div>
-                    </div>
-                    <div class="skills__line">
-                        <div class="skills__line-outside">
-                            <div class="skills__line-inside-90"></div>
-                        </div>
-                    </div>
-                    <div class="skills__content">
-                        <div class="skills__content-name">Express</div>
-                        <div class="skills__content-percent">90%</div>
-                    </div>
-                    <div class="skills__line">
-                        <div class="skills__line-outside">
-                            <div class="skills__line-inside-90"></div>
-                        </div>
-                    </div>
-                    <div class="skills__content">
-                        <div class="skills__content-name">Laravel</div>
-                        <div class="skills__content-percent">90%</div>
-                    </div>
-                    <div class="skills__line">
-                        <div class="skills__line-outside">
-                            <div class="skills__line-inside-90"></div>
-                        </div>
-                    </div>
+                        <% }); %>
                 </div>
                 <div class="line"></div>
                 <div class="extra-skills">
                     <div class="extra-skills__title">Extra Skills</div>
-                    <div class="extra-skills__content">
-                        <div class="extra-skills__icon">
-                            <div class="extra-skills__icon-first">
-                                <div class="extra-skills__icon-second">
+                    <% user.extra_skills.forEach(function(item) { %>
+                        <div class="extra-skills__content">
+                            <div class="extra-skills__icon">
+                                <div class="extra-skills__icon-first">
+                                    <div class="extra-skills__icon-second">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="extra-skills__name">
-                            Bootstrap, Materialize
-                        </div>
-                    </div>
-                    <div class="extra-skills__content">
-                        <div class="extra-skills__icon">
-                            <div class="extra-skills__icon-first">
-                                <div class="extra-skills__icon-second">
-                                </div>
+                            <div class="extra-skills__name">
+                                <%= item %>
                             </div>
                         </div>
-                        <div class="extra-skills__name">
-                            Bootstrap, Materialize
-                        </div>
-                    </div>
-                    <div class="extra-skills__content">
-                        <div class="extra-skills__icon">
-                            <div class="extra-skills__icon-first">
-                                <div class="extra-skills__icon-second">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="extra-skills__name">
-                            Bootstrap, Materialize
-                        </div>
-                    </div>
+                        <% }); %>
                 </div>
                 <div class="line"></div>
             </div>
