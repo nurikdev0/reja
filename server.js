@@ -14,7 +14,7 @@ fs.readFile("database/user.json", "utf-8", (err, data) => {
 
 
 // 1 Kirish code
-app.use(express.static("public"));  // permission to public folder
+app.use(express.static("public")); // MiddleWare DP  // permission to public folder
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));  // permission for html form request
 
@@ -50,7 +50,6 @@ app.post("/create-item", function (req, res) {
 app.get("/author", (req, res) => {
     res.render("author", { user });
 });
-
 
 
 const server = http.createServer(app);
