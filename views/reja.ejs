@@ -17,7 +17,7 @@
 
         <form class="row justify-content-center" id="create-form" action="/create-item" method="POST">
             <div class="col-md-6">
-                <input type="text" name="reja" class="form-control" placeholder="Yangi reja kiriting">
+                <input id="create-field" type="text" name="reja" class="form-control" placeholder="Yangi reja kiriting">
             </div>
             <div class="col-auto">
                 <button type="submit" class="btn btn-primary mb-3">Yangi Reja Qo'shish</button>
@@ -49,10 +49,12 @@
 
         <div class="row justify-content-center">
             <div class="col-md-6 text-center">
-                <button class="btn btn-danger">Hamma Rejalarni O'chirish</button>
+                <button id="clean-all" class="btn btn-danger">Hamma Rejalarni O'chirish</button>
             </div>
         </div>
     </div>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="/browser.js"></script>
 </body>
 
 </html>

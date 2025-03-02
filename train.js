@@ -1,18 +1,62 @@
-// B-TASK:
+// C-TASK:
+const time = require("moment");
 
-function countDigits(string) {
-    let count = 0;
-
-    for (let value of string) {
-        if (!isNaN(value)) {
-            count++;
-        }
+class Shop {
+    constructor(non, lagmon, cola) {
+        this.non = non;
+        this.lagmon = lagmon;
+        this.cola = cola;
     }
 
-    return count;
+    time() {
+        return time().format('HH:mm');
+    }
+
+    qoldiq() {
+        return `hozir ${this.time()} da, qoldiq:  ${this.non} ta non,  ${this.lagmon} ta lagmon,  ${this.cola} ta cola`;
+    }
+
+    sotish(mahsulot, soni) {
+        this[mahsulot] -= soni;
+        return `hozir ${this.time()} da, ${soni} ta ${mahsulot} sotildi! `;
+    }
+
+    qabul(mahsulot, soni) {
+        this[mahsulot] += soni;
+        return `hozir ${this.time()} da, ${soni} ta ${mahsulot} qabul qilindi! `;
+    }
 }
 
-console.log(countDigits("ad2a54yg79wet0sfgb9")); // 7
+
+const shop = new Shop(10, 10, 10);
+
+console.log(shop.qoldiq());
+console.log(shop.sotish('non', 2));
+console.log(shop.qabul('cola', 2));
+console.log(shop.qoldiq());
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+// B-TASK:
+
+// function countDigits(string) {
+//     let count = 0;
+
+//     for (let value of string) {
+//         if (!isNaN(value)) {
+//             count++;
+//         }
+//     }
+
+//     return count;
+// }
+
+// console.log(countDigits("ad2a54yg79wet0sfgb9")); // 7
 
 
 
