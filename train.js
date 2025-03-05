@@ -1,39 +1,57 @@
-// C-TASK:
-const time = require("moment");
+// D-TASK:
 
-class Shop {
-    constructor(non, lagmon, cola) {
-        this.non = non;
-        this.lagmon = lagmon;
-        this.cola = cola;
-    }
+function checkContent(a, b) {
 
-    time() {
-        return time().format('HH:mm');
-    }
+    let first = a.split('').sort().join('');
+    let second = b.split('').sort().join('');
 
-    qoldiq() {
-        return `hozir ${this.time()} da, qoldiq:  ${this.non} ta non,  ${this.lagmon} ta lagmon,  ${this.cola} ta cola`;
-    }
-
-    sotish(mahsulot, soni) {
-        this[mahsulot] -= soni;
-        return `hozir ${this.time()} da, ${soni} ta ${mahsulot} sotildi! `;
-    }
-
-    qabul(mahsulot, soni) {
-        this[mahsulot] += soni;
-        return `hozir ${this.time()} da, ${soni} ta ${mahsulot} qabul qilindi! `;
-    }
+    return first === second;
 }
 
+console.log(checkContent("mitgroup", "gmtiprou"))
 
-const shop = new Shop(10, 10, 10);
 
-console.log(shop.qoldiq());
-console.log(shop.sotish('non', 2));
-console.log(shop.qabul('cola', 2));
-console.log(shop.qoldiq());
+
+
+
+////////////////////////////////////////////////////////////
+
+// C-TASK:
+// const time = require("moment");
+
+// class Shop {
+//     constructor(non, lagmon, cola) {
+//         this.non = non;
+//         this.lagmon = lagmon;
+//         this.cola = cola;
+//     }
+
+//     time() {
+//         return time().format('HH:mm');
+//     }
+
+//     qoldiq() {
+//         return `hozir ${this.time()} da, qoldiq:  ${this.non} ta non,  ${this.lagmon} ta lagmon,  ${this.cola} ta cola`;
+//     }
+
+//     sotish(mahsulot, soni) {
+//         this[mahsulot] -= soni;
+//         return `hozir ${this.time()} da, ${soni} ta ${mahsulot} sotildi! `;
+//     }
+
+//     qabul(mahsulot, soni) {
+//         this[mahsulot] += soni;
+//         return `hozir ${this.time()} da, ${soni} ta ${mahsulot} qabul qilindi! `;
+//     }
+// }
+
+
+// const shop = new Shop(10, 10, 10);
+
+// console.log(shop.qoldiq());
+// console.log(shop.sotish('non', 2));
+// console.log(shop.qabul('cola', 2));
+// console.log(shop.qoldiq());
 
 
 
