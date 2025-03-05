@@ -34,8 +34,6 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
 
 
 document.addEventListener("click", function (e) {
-
-    // delete
     if (e.target.classList.contains("delete-me")) {
         if (confirm("Aniq O`chirmoqchimisiz")) {
             axios.post("/delete-item", { id: e.target.getAttribute("data-id") })
@@ -48,6 +46,8 @@ document.addEventListener("click", function (e) {
         }
     }
 
+
+    // Update
     if (e.target.classList.contains("edit-me")) {
         let userInput = prompt("O`zgartirish kiriting", e.target.parentElement.parentElement.querySelector(".item-text").innerHTML);
         if (userInput) {
