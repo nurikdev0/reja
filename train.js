@@ -1,14 +1,32 @@
-// D-TASK:
+// E-TASK:
 
-function checkContent(a, b) {
+function getReverse(a) {
 
-    let first = a.split('').sort().join('');
-    let second = b.split('').sort().join('');
+  let first = a.split('').reverse().join('');
 
-    return first === second;
+  return first;
 }
 
-console.log(checkContent("mitgroup", "gmtiprou"))
+console.log(getReverse("hello"))
+
+
+
+
+
+
+////////////////////////////////////////////////////
+
+// D-TASK:
+
+// function checkContent(a, b) {
+
+//     let first = a.split('').sort().join('');
+//     let second = b.split('').sort().join('');
+
+//     return first === second;
+// }
+
+// console.log(checkContent("mitgroup", "gmtiprou"))
 
 
 
