@@ -1,13 +1,42 @@
-// E-TASK:
+// F-TASK:
 
-function getReverse(a) {
+function findDoublers(value) {
 
-  let first = a.split('').reverse().join('');
+  let charCount = {};
 
-  return first;
+
+  for (let char of value) {
+
+    if (charCount[char]) {
+
+      return true;
+    }
+
+    charCount[char] = 1;
+  }
+
+  return false;
 }
 
-console.log(getReverse("hello"))
+
+console.log(findDoublers("hello"));
+
+
+
+
+
+////////////////////////////////////////////////////
+
+// E-TASK:
+
+// function getReverse(a) {
+
+//   let first = a.split('').reverse().join('');
+
+//   return first;
+// }
+
+// console.log(getReverse("hello"))
 
 
 
@@ -98,13 +127,6 @@ console.log(getReverse("hello"))
 
 
 
-
-
-
-
-
-
-
 //////////////////////////////////////////////////
 
 // A-TASK:
@@ -119,12 +141,6 @@ console.log(getReverse("hello"))
 // }
 
 // console.log(countLetter("g", "engineer"));
-
-
-
-
-
-
 
 
 
